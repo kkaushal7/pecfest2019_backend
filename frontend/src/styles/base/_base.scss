@@ -1,0 +1,15 @@
+html {
+  margin: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: $m-size;
+  height: 100%;
+  margin: 0;
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
