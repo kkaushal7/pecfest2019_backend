@@ -1,22 +1,41 @@
-import React, {Component} from 'react';
-import { stack as Menu } from 'react-burger-menu';
-import {Link} from "react-router-dom";
+import React, {Component, Fragment} from 'react';
+import {NavLink} from "react-router-dom";
+import {HamburgerSpin} from 'react-animated-burgers'
+
+const Links = ['Events', 'Megashows', 'About', 'Sponsors', 'Login'];
 
 class Header extends Component {
-    showSettings(event) {
-        event.preventDefault();
-    }
+    state = {
+        isActive: false,
+    };
+    toggleButton = () => {
+        this.setState(({isActive}) => ({isActive: !isActive}))
+    };
+
 
     render() {
         return (
-            <Menu disableAutoFocus right>
-                <li><Link className={"menu-item"} to={"/"}>Home</Link></li>
-                <li><Link className={"menu-item"} to={"/events"}>Events</Link></li>
-                <li><Link className={"menu-item"} to={"/megashows"}>Megashows</Link></li>
-                <li><Link className={"menu-item"} to={"/about"}>About</Link></li>
-                <li><Link className={"menu-item"} to={"/sponsors"}>Sponsors</Link></li>
-                <li><Link className={"menu-item"} to={"/login"}>Login</Link></li>
-            </Menu>
+            <Fragment>
+                <div className={"open-wrapper"}>
+                    <div><HamburgerSpin isActive={this.state.isActive} toggleButton={this.toggleButton}
+                                        barColor="white"/></div>
+                </div>
+                <div id="myNav" className="overlay" style={{width: this.state.isActive ? "100%" : "0%"}}>
+                    {/*<a href="javascript:void(0)" className="closebtn" onClick="closeNav()">&times;</a>*/}
+                    {/*<HamburgerSpin isActive={this.state.isActive} toggleButton={this.toggleButton} barColor="white"/>*/}
+                    <div className="overlay-content">
+                        <ul className={"header-list"}>
+                        <li className={"slide-fade"}><NavLink exact={true} to={"/"} onClick={this.toggleButton}>Home</NavLink></li>
+                        {
+                            Links.map((link, index) => (
+                                <li key={index} className={"slide-fade"}><NavLink  exact={true} onClick={this.toggleButton}
+                                         to={`/${link.toLowerCase()}`}>{link}</NavLink></li>
+                            ))
+                        }
+                        </ul>
+                    </div>
+                </div>
+            </Fragment>
         );
     }
 }

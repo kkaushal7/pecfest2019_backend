@@ -1,13 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 // import Header from './layout/Header';
 import Home from './Pages/Home';
 import Sponsors from './Pages/Sponsors';
 import About from './Pages/About';
 import Events from './Pages/Events';
-import  Login from './Pages/Login';
+import Login from './Pages/Login';
 import Megashows from './Pages/Megashows';
+import Background from './layout/Background/Background';
 // import PrivateRoute from './common/PrivateRoute';
 // import {Provider as AlertProvider} from "react-alert";
 // import AlertTemplate from 'react-alert-template-basic';
@@ -48,24 +49,26 @@ class App extends Component {
             //   </AlertProvider>
             // </Provider>
             <Router>
-                <Fragment>
-                    <Header />
+                <Background/>
+                <div className={"overlay-2"}>
+                    <Header/>
                     {/*<Alerts />*/}
                     <div className="container" id={"page-wrap"}>
                         <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/sponsors" component={Sponsors} />
-                            <Route exact path="/about" component={About} />
+                            <Route exact path="/" component={Home}/>
+                            <Route exact path="/sponsors" component={Sponsors}/>
+                            <Route exact path="/about" component={About}/>
                             <Route exact path={"/megashows"} component={Megashows}/>
                             <Route exact path={"/events"} component={Events}/>
-                            <Route exact path={"/login"}  component={Login}/>
+                            <Route exact path={"/login"} component={Login}/>
                         </Switch>
                     </div>
-                </Fragment>
+                </div>
+
             </Router>
 
         );
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById("app"));
+export default App;
