@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^auth/', include('social_django.urls', namespace='social')),
     path('', include('frontend.urls')),
     path('', include('backend.urls'))
-    
+
 ]
 
