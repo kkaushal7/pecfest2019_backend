@@ -6,11 +6,9 @@ from django.views.generic import TemplateView
 from views import home
 
 urlpatterns = [
-
-    url(r'^admin/', admin.site.urls),
-    url(r'^auth/', include('social_django.urls', namespace='social')),
+    path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
-    path('', include('backend.urls'))
-
+    path('', include('accounts.urls')),
+    path('', include('backend.urls')),
 ]
 
