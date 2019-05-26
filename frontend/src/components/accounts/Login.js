@@ -18,13 +18,17 @@ export class Login extends Component {
         const key = e.target.name;
         const val = e.target.value;
         this.setState(() => ({ [key]: val }));
-        this.setState(() => ({username: val.toUpperCase()}));
+        if(key === 'username')
+        {
+            this.setState(() => ({username: val.toUpperCase()}));
+        }
+
     };
 
     onSubmit = (e) => {
         e.preventDefault();
         const { username, password } = this.state;
-        this.props.login(username, password);
+        this.props.login(username.toLowerCase(), password);
     };
 
 

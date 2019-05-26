@@ -22,6 +22,10 @@ export class Register extends Component {
         const key = e.target.name;
         const val = e.target.value;
         this.setState(() => ({ [key]: val }));
+        if(key === 'username')
+        {
+            this.setState(() => ({username: val.toUpperCase()}));
+        }
     };
 
     onSubmit = (e) => {
@@ -31,7 +35,7 @@ export class Register extends Component {
             this.props.createMessage({ passwordsNotMatch: 'Passwords do not match.' })
         }
         else {
-            const user = { username, email, password };
+            const user = {username:username.toLowerCase(), email, password };
             this.props.register(user);
         }
 
