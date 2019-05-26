@@ -12,11 +12,13 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.4.4",
+        "@babel/plugin-transform-flow-strip-types": "^7.4.4",
         "@babel/preset-env": "^7.4.4",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.6",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-es2017": "^6.24.1",
         "css-loader": "^2.1.1",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
@@ -25,6 +27,7 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
+        "babel-plugin-transform-flow-strip-types": "^6.22.0",
         "babel-preset-env": "^1.7.0",
         "mdbreact": "^4.14.0",
         "node-sass": "^4.12.0",

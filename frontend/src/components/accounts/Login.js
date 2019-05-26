@@ -18,6 +18,7 @@ export class Login extends Component {
         const key = e.target.name;
         const val = e.target.value;
         this.setState(() => ({ [key]: val }));
+        this.setState(() => ({username: val.toUpperCase()}));
     };
 
     onSubmit = (e) => {
