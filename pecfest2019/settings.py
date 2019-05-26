@@ -39,12 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
-    'backend',
     'rest_framework',
     'frontend',
     'knox',
-    'accounts'
+    'accounts',
+    'events'
 ]
 
 REST_FRAMEWORK = {
