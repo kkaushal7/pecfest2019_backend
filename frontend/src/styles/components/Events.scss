@@ -25,10 +25,10 @@
       height: 14vw;
       width: 32%;
       margin: 10px auto;
-      z-index: 75;
+      // z-index: 75;
       /* background-color: blueviolet; */
     }
-    .card {
+    .card1 {
       display: block;
       position: relative;
       height: 100%;
@@ -42,7 +42,7 @@
       border: none;
       background: #313438;
     }
-    .card .card-item {
+    .card1 .card1-item {
       display: block;
       position: absolute;
       height: 100%;
@@ -52,7 +52,7 @@
       /* Firefox issue - TOOK MY 2hrs >:( */
     }
     
-    .card .card-front {
+    .card1 .card1-front {
       z-index: 5;
       backface-visibility: hidden;
       transition: all 0.8s ease-in-out;
@@ -61,26 +61,26 @@
       -moz-transform: rotateY(0deg);
     }
     
-    .card:hover .card-front {
+    .card1:hover .card1-front {
       background-color: #eee;
       transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
       -moz-transform: rotateY(180deg);
     }
-    .card .card-front img {
+    .card1 .card1-front img {
       display: block;
       height: 80%;
       width: 100%;
     }
     
-    .card .card-front .headText {
+    .card1 .card1-front .headText {
       display: block;
       height: 20%;
       position: relative;
       background-color: #2980b9;
     }
     
-    .card .card-front .headText p {
+    .card1 .card1-front .headText p {
       font-size: 20px;
       letter-spacing: 0.5px;
       word-spacing: 1.5px;
@@ -93,13 +93,13 @@
       text-transform: uppercase;
     }
     
-    .card .card-front .headText {
+    .card1 .card1-front .headText {
       display: block;
       height: 20%;
       position: relative;
     }
     
-    .card .card-back {
+    .card1 .card1-back {
       backface-visibility: hidden;
       transform: rotateY(-180deg);
       -webkit-transform: rotateY(-180deg);
@@ -107,21 +107,21 @@
       transition: all 0.8s ease-in-out;
     }
     
-    .card:hover .card-back {
+    .card1:hover .card1-back {
       background-color: #eee;
       transform: rotateY(0deg);
       -webkit-transform: rotateY(0deg);
       -moz-transform: rotateY(0deg);
     }
     
-    .card .card-back img {
+    .card1 .card1-back img {
       display: block;
       height: 80%;
       width: 100%;
       z-index: 0;
     }
     
-    .card .card-back::after {
+    .card1 .card1-back::after {
       content: '';
       position: absolute;
       height: 100%;
@@ -131,7 +131,7 @@
       background-color: rgba(0, 0, 0, 0.7);
     }
     
-    .card .card-back .headText {
+    .card1 .card1-back .headText {
       display: block;
       height: 20%;
       position: relative;
@@ -139,7 +139,7 @@
       background-color: #F20056;
     }
     
-    .card .card-back .eventName {
+    .card1 .card1-back .eventName {
       position: absolute;
       display: block;
       height: 20%;
@@ -149,8 +149,8 @@
       z-index: 33;
     }
     
-    .card .card-back .headText p,
-    .card .card-back .eventName p {
+    .card1 .card1-back .headText p,
+    .card1 .card1-back .eventName p {
       font-size: 20px;
       letter-spacing: 0.5px;
       word-spacing: 1.5px;
@@ -163,7 +163,7 @@
       text-transform: capitalize;
     }
     
-    .card .card-back .eventName p {
+    .card1 .card1-back .eventName p {
       font-size: 25px;
       letter-spacing: 0.5px;
       word-spacing: 1.5px;

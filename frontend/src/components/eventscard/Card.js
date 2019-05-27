@@ -24,14 +24,14 @@ export default class Card extends Component {
                   data-wow-duration="1s"
                   className="event fadeInDown"
                 >
-                  <div className="card">
-                    <div className="card-item card-front">
+                  <div className="card1">
+                    <div className="card1-item card1-front">
                       <img src={src} alt="cultural" />
                       <div className="headText">
                         <p>{title}</p>
                       </div>
                     </div>
-                    <div className="card-item card-back">
+                    <div className="card1-item card1-back">
                       <img src={src} alt="cultural" />
                       <div className="eventName">
                         <p>{title}</p>
