@@ -39,8 +39,8 @@ class Header extends Component {
                                         barColor="white"/></div>
                 </div>
                 <div id="myNav" className="overlay" style={{width: this.state.isActive ? "100%" : "0%"}}>
-                    <div className="overlay-content">
-                        <ul className={"header-list"}>
+                    <div className="overlay-content row">
+                        <ul className={"header-list col-md-6"}>
                             {
                                 Links.map((link, index) => (
                                     <li key={index} className={"slide-fade"}><NavLink exact={true}
