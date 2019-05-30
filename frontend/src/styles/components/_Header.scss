@@ -146,20 +146,26 @@ ul {
   text-align: center;
   margin-top: 30px;
 }
-
-.overlay a {
+:root {
+  --mainColor: #00b894;
+}
+.slide-fade a {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  transition: background-size 0.3s;
+  background: linear-gradient(to bottom, var(--mainColor) 0%,
+          var(--mainColor) 100%
+  ) repeat-x 0 100%;
+  background-size: 4px 0px;
 }
 
-.overlay a:hover, .overlay a:focus {
+.slide-fade a:hover, .overlay a:focus {
   color: #f1f1f1;
   outline: none;
-  transition: 0.3s ease-in-out;
+  background-size: 4px 60px;
 }
 
 .overlay button {
