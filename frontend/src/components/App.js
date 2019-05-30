@@ -37,7 +37,7 @@ class App extends Component {
                         <div className={"overlay-2"}>
                             <Header/>
                             <Alerts />
-                            <div className="container" id={"page-wrap"}>
+                            <div className="furtherPages">
                                 <Switch>
                                     <Route exact path="/" component={Home}/>
                                     <Route exact path="/sponsors" component={Sponsors}/>

@@ -1,0 +1,40 @@
+.eventsPage {
+    background-image: url("../../../static/imgs/ehome.jpg");
+    height: 100%;
+    width: 100%;
+
+    .carousel {
+        padding: 40px 40px;
+        .items {
+            border-radius: 10px;
+            width: 600px !important;
+        }
+        .carousel-caption {
+            position: relative !important;
+            left: 5% !important;
+            bottom: 0;
+            top: 10px;
+        }
+        .caro {
+            display: flex;
+        }
+        .carousel-control-prev-icon {
+            right: 100px !important;
+            position: relative;
+
+        }
+        .carousel-control-next-icon {
+            left: 100px !important;
+            position: relative;
+
+        }
+        .carousel-indicators {
+            display: none;
+        }
+    }
+    // .item {
+    //     height: 200px;
+    // }
+}
+
+
