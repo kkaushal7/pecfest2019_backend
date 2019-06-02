@@ -65,13 +65,24 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1 style={{fontSize: '60px'}}>PECFEST 2019</h1>
+
+                <svg viewBox="0 0 600 300">
+                    <symbol id="s-text">
+                        <text text-anchor="middle" x="50%" y="20%" dy=".35em">PECFEST'19</text>
+                    </symbol>
+                    <use className="text" xlinkHref="#s-text"></use>
+                    <use className="text" xlinkHref="#s-text"></use>
+                    <use className="text" xlinkHref="#s-text"></use>
+                    <use className="text" xlinkHref="#s-text"></use>
+                    <use className="text" xlinkHref="#s-text"></use>
+                </svg>
+
+
                 <h1>PECFEST is
                     <span
                         className="txt-rotate"
                         data-period="2000"
-                        data-rotate='[ " awesome" , " great", " best", " Greatest"]'>
-
+                        data-rotate='[ " Awesome" , " Great", " Best", " Greatest"]'>
                     </span>
                 </h1>
             </div>

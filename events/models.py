@@ -30,6 +30,7 @@ class event(models.Model):
 
     #Detailed Info
     eventType = models.CharField(max_length=30)
+    category = models.CharField(max_length=50)
     association = models.ForeignKey(to=club, verbose_name="Name of the club/society associated with this event", on_delete=models.CASCADE)
     details = models.TextField(blank=True)
     shortDescription = models.TextField(blank=True, verbose_name="Short Description about event")

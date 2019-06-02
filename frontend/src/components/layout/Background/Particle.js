@@ -48,7 +48,7 @@ export default () => {
                         let geometry = new THREE.Geometry();
                         let material = new THREE.PointsMaterial({
                             size: 1,
-                            color: 0x00b894,
+                            color: 0x81ecec,
                             sizeAttenuation: false
                         });
                         for (let y = 0, y2 = imagedata.height; y < y2; y += 2) {
@@ -80,7 +80,7 @@ export default () => {
                 scene.add(particleRotation);
                 let geometryPR = new THREE.TetrahedronGeometry(2, 0),
                     materialPR = new THREE.MeshPhongMaterial({
-                        color: 0x00b894,
+                        color: 0x81ecec,
                         flatShading: THREE.FlatShading
                     });
 

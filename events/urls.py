@@ -3,8 +3,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from events import views
 
 urlpatterns = [
-    path('events/', views.EventList.as_view()),
-    path('events/<int:pk>/', views.EventList.as_view()),
+    path('api/events/', views.EventList.as_view()),
+    path('api/events/category/<slug:categoryID>/', views.CategoryEvents.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
