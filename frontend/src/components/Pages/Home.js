@@ -67,7 +67,9 @@ class Home extends Component {
                     <span
                         className="txt-rotate"
                         data-period="2000"
-                        data-rotate='[ " awesome" , " great", " best", " Greatest"]'></span>
+                        data-rotate='[ " awesome" , " great", " best", " Greatest"]'>
+
+                    </span>
                 </h1>
             </div>
         );
