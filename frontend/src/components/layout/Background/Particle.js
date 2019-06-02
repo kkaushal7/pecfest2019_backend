@@ -39,7 +39,7 @@ export default () => {
                 renderer.setSize(windowWidth, windowHeight);
                 scene = new THREE.Scene();
                 camera = new THREE.PerspectiveCamera(50, windowWidth / windowHeight, 0.1, 10000);
-                camera.position.set(-100, 0, 600);
+                camera.position.set(0, 0, 600);
                 camera.lookAt(centerVector);
                 scene.add(camera);
                 let loader = new THREE.TextureLoader();
@@ -78,13 +78,13 @@ export default () => {
                 );
                 particleRotation = new THREE.Object3D();
                 scene.add(particleRotation);
-                let geometryPR = new THREE.TetrahedronGeometry(2, 0),
+                let geometryPR = new THREE.TetrahedronGeometry(1, 0),
                     materialPR = new THREE.MeshPhongMaterial({
                         color: 0x81ecec,
                         flatShading: THREE.FlatShading
                     });
 
-                for (let i = 0; i < 1000; i++) {
+                for (let i = 0; i < 700; i++) {
                     let mesh = new THREE.Mesh(geometryPR, materialPR);
                     mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
                     mesh.position.multiplyScalar(90 + Math.random() * 700);

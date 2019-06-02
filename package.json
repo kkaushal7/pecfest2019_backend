@@ -45,7 +45,7 @@
         "react-responsive-sidebar": "^0.1.16",
         "react-router-dom": "^5.0.0",
         "react-router-redux": "^4.0.8",
-        "react-transition-group": "^4.0.1",
+        "react-transition-group": "^4.1.0",
         "redux": "^4.0.1",
         "redux-devtools-extension": "^2.13.8",
         "redux-thunk": "^2.3.0",
