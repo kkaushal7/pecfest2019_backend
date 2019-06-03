@@ -14,3 +14,5 @@ export const EVENT_ERROR = "EVENT_ERROR";
 export const EVENTS_LOADING = "EVENTS_LOADING";
 export const EVENTS_LOADED = "EVENTS_LOADED";
 export const EVENTS_ERROR = "EVENTS_ERROR";
+export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
+export const UPDATE_FAIL = "UPDATE_FAIL";

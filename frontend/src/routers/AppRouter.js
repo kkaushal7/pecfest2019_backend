@@ -13,6 +13,7 @@ import Header from "../components/layout/Header";
 import Alerts from "../components/layout/Alerts";
 import {Provider as AlertProvider} from "react-alert";
 import IndividualEvent from "../components/events/IndividualEvent";
+import ExtraDetails from "../components/accounts/ExtraDetails";
 
 const alertOptions = {
     timeout: 3000,
@@ -38,6 +39,7 @@ class AppRouter extends Component {
                                 <Route exact path={"/login"} component={LoginPage}/>
                                 <Route exact path={"/register"} component={RegisterPage}/>
                                 <Route exact path={"/event/:id"} component ={IndividualEvent}/>
+                                <Route exact path={"/update"} component={ExtraDetails}/>
                             </Switch>
                         </div>
                     </div>

@@ -11,7 +11,8 @@ export class Login extends Component {
 
     static propTypes = {
         login: PropTypes.func.isRequired,
-        isAuthenticated: PropTypes.bool
+        isAuthenticated: PropTypes.bool,
+        firstTimer: PropTypes.bool
     };
 
     onChange = e => {
@@ -33,8 +34,13 @@ export class Login extends Component {
 
 
     render() {
-        if (this.props.isAuthenticated) {
-            return <Redirect to="/" />
+        if (this.props.isAuthenticated  ) {
+            if(!this.props.firstTimer) {
+                return <Redirect to="/"/>
+            }
+            else {
+                return <Redirect to="/update"/>
+            }
         }
         const { username, password } = this.state;
         return (
@@ -78,7 +84,8 @@ export class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    firstTimer: state.auth.user.firstTimer
 });
 
 export default connect(mapStateToProps, { login })(Login);

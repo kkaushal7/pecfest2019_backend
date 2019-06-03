@@ -15,7 +15,8 @@ export class Register extends Component {
     static propTypes = {
         register: PropTypes.func.isRequired,
         isAuthenticated: PropTypes.bool,
-        createMessage: PropTypes.func.isRequired
+        createMessage: PropTypes.func.isRequired,
+        firstTimer: PropTypes.bool
     };
 
     onChange = e => {
@@ -42,8 +43,13 @@ export class Register extends Component {
     };
 
     render() {
-        if (this.props.isAuthenticated) {
-            return <Redirect to="/" />
+        if (this.props.isAuthenticated  ) {
+            if(!this.props.firstTimer) {
+                return <Redirect to="/"/>
+            }
+            else {
+                return <Redirect to="/update"/>
+            }
         }
         const { username, email, password, password2 } = this.state;
         return (
@@ -107,7 +113,8 @@ export class Register extends Component {
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    firstTimer: state.auth.user.firstTimer
 });
 
 export default connect(mapStateToProps, { register, createMessage })(Register);
