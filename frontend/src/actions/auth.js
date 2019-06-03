@@ -2,14 +2,14 @@ import axios from 'axios';
 import { returnErrors } from './messages';
 
 import {
-  USER_LOADED,
-  USER_LOADING,
-  AUTH_ERROR,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
-  REGISTER_FAIL
+    USER_LOADED,
+    USER_LOADING,
+    AUTH_ERROR,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
+    LOGOUT_SUCCESS,
+    REGISTER_SUCCESS,
+    REGISTER_FAIL, UPDATE_SUCCESS, UPDATE_FAIL
 } from './types';
 
 export const loadUser = () => (dispatch, getState) => {
@@ -72,6 +72,29 @@ export const register = ({ username, email, password }) => dispatch => {
       dispatch({
         type: REGISTER_FAIL
       });
+    })
+};
+
+export const update = ({ firstName, lastName, contactNumber, accommodation, college, address, yearOfStudy, gender }) => dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    const body = JSON.stringify({ firstName, lastName, contactNumber, accommodation, college, address, yearOfStudy, gender });
+
+    axios.post('/api/auth/profile', body, config)
+        .then(res => {
+            dispatch({
+                type: UPDATE_SUCCESS,
+                payload: res.data
+            });
+        }).catch(err => {
+        dispatch(returnErrors(err.response.data, err.response.status));
+        dispatch({
+            type: UPDATE_FAIL
+        });
     })
 };
 
