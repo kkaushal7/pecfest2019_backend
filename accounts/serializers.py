@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from knox.models import AuthToken
 
 
 #user serializer
+from accounts.models import Participant
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -20,6 +24,13 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
         return user
+
+
+class ParticipantSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Participant
+        fields = "__all__"
 
 
 #Login Serializer
